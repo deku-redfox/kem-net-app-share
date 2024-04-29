@@ -19,8 +19,6 @@ const PARSE_JAVASCRIPT_KEY = 'Y32qQkoFccyI1zaUmsUQiZqLtzJj8pvfxhzMdnxY';
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
-const password = 'kem.net'
-
 export default function Page() {
 
   const [apps, setApps] = useState([])
