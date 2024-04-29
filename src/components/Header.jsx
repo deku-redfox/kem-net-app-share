@@ -73,7 +73,7 @@ const Header = () => {
         <div className={`${styles.header} ${isActive ? styles.active : ''}`}>
             <div className="container h-full ">
                 <Link href='/' className={styles.logo}>
-                    <Image src='/logo.png' width={100} height={100} 
+                    <Image src='/logo.png' width={100} height={100} alt='app logo'
                         className='sm:w-[100px] sm:h-[100px] w-[85px] h-[85px]'/>
                     <span className="font-semibold sm:text-lg lg:text-xl text-color-primary -ml-5">
                         <p>Kem net Share</p>

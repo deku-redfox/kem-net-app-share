@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faChevronRight, faChevronLeft, faFilter, faListSquares, faDownload } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Parse from 'parse'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import Skeleton from '@/components/Skeleton'
 import { useSearchParams } from 'next/navigation'
 import CustomInput from '@/components/CustomInput'
@@ -19,7 +19,16 @@ const PARSE_JAVASCRIPT_KEY = 'Y32qQkoFccyI1zaUmsUQiZqLtzJj8pvfxhzMdnxY';
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
+
 export default function Page() {
+  return (
+    <Suspense>
+      <PageBody />
+    </Suspense>
+  )
+}
+
+function PageBody() {
 
   const [apps, setApps] = useState([])
   const [pageCount, setPageCount] = useState(0)

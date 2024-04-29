@@ -37,7 +37,7 @@ const Footer = () => {
             {
               links.map((e, index) => (
                 <a key={index} href={e.url} className='cursor-pointer'>
-                  <Image src={e.icon} width={24} height={24}/>
+                  <Image src={e.icon} width={24} height={24} alt={`${e.url} icon`}/>
                 </a>
               ))
             }
