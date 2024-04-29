@@ -1,0 +1,29 @@
+.header {
+    @apply absolute h-[70px] sm:h-[80px] ease-in-out duration-500 z-40 top-0 left-0 right-0 
+        bg-color-primary text-white;
+}
+
+.header.active {
+    @apply fixed;
+    animation: slideIn 1s ease forwards;
+}
+
+.logo {
+    @apply absolute top-0 bottom-0 left-0 flex items-center pl-1 pr-4 sm:pl-4 sm:pr-7;
+}
+
+
+.logo::before {
+    @apply absolute top-0 left-0 bottom-0 right-0 bg-color-secondary;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+    content: '';
+    z-index: -1;
+}
+
+@keyframes slideIn {
+    
+    0% {transform: translateY(-100%);}
+
+    100% {transform: translateY(0);}
+
+}

@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --color-primary: rgb(0, 128, 0);
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --transition-bg: background-color .15s ease-in-out;
+  --transition-opacity: opacity .15s ease-in-out;
+  --transition-border: border .15s ease-in-out;
+  --transition: .2s ease-in-out;
+  
+  font-size: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+
+  h1 {
+    @apply text-[45px] max-lg:text-4xl leading-tight;
+  }
+
+  h2 {
+    @apply text-[40px] max-md:text-[34px] leading-tight
+  }
+
+  h3 {
+    @apply text-[24px] max-md:text-[22px] leading-tight
+  }
+
+  h4{
+    @apply text-[22px]
+  }
+
+  h5 {
+    @apply text-xl
+  }
+
+  a {
+    transition: var(--transition-bg), var(--transition-opacity), var(--transition-border);
+  }
+
+  .scrollable {
+    overflow-y: scroll;
+  }
+
+  .small-paragraph {
+    @apply text-sm font-normal text-justify leading-relaxed
+  }
+ 
+  .scrollable::-webkit-scrollbar{ width: 8px; }
+
+  .scrollable::-webkit-scrollbar-track { 
+      background-color: var(--grey10); 
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+  }
+  
+  .scrollable::-webkit-scrollbar-thumb { 
+      all: unset;
+      background-color: rgba(196, 196, 196, 0.534);
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+  }
+
+  .rollin {
+    transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+    transition-duration: 1000ms;
+  }
+}
+
+@layer components {
+
+  .outlineIconBtn {
+    @apply h-8 w-8 rounded-md border-2 border-color-primary cursor-pointer
+      text-color-iron flex justify-center items-center duration-500 hover:bg-color-primary hover:text-white
+  }
+
+  .outlineIconBtn.active {
+    @apply bg-color-primary text-white
+  }
+
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
